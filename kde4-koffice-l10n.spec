@@ -5,6 +5,10 @@
 #   and ':%s#koffice-1.6.3#koffice-%{version}#g'
 # - ISO 639-1 language codes maybe be looked up from http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 #
+# TODO:
+# - package hne lang
+#
+
 %define		orgname		koffice-l10n
 %define		kdever		4.4.3
 
@@ -111,6 +115,28 @@ KOffice suite - German language support.
 %description German -l pl.UTF-8
 KOffice - wsparcie dla języka niemieckiego.
 
+%package Greek
+Summary:	KOffice suite - Greek language support
+Summary(pl.UTF-8):	KOffice - wsparcie dla języka greckiego
+Group:		I18n
+
+%description Greek
+KOffice suite - Greek language support.
+
+%description Greek -l pl.UTF-8
+KOffice - wsparcie dla języka greckiego.
+
+%package Kazakh
+Summary:        KOffice suite - Kazakh language support
+Summary(pl.UTF-8):      KOffice - wsparcie dla języka kazachskiego
+Group:          I18n
+
+%description Kazakh
+KOffice suite - Kazakh language support.
+
+%description Kazakh -l pl.UTF-8
+KOffice - wsparcie dla języka kazachskiego.
+
 %package English_UK
 Summary:	KOffice suite - KOffice suite - English (UK) language support
 Summary(pl.UTF-8):	KOffice - wsparcie dla języka angielskiego (odmiany brytyjskiej)
@@ -155,6 +181,17 @@ KOffice suite - French language support.
 %description French -l pl.UTF-8
 KOffice - wsparcie dla języka francuskiego.
 
+%package Frisian
+Summary:	KOffice suite - Frisian language support
+Summary(pl.UTF-8):	KOffice - wsparcie dla języka fryzyjskiego
+Group:		I18n
+
+%description Frisian
+KOffice suite - Frisian language support.
+
+%description Frisian -l pl.UTF-8
+KOffice - wsparcie dla języka fryzyjskiego.
+
 %package Galician
 Summary:	KOffice suite - Galician language support
 Summary(pl.UTF-8):	KOffice - wsparcie dla języka galicyjskiego
@@ -188,6 +225,17 @@ KOffice suite - Japanese language support.
 %description Japanese -l pl.UTF-8
 KOffice - wsparcie dla języka japońskiego.
 
+%package Low_Saxon
+Summary:	KOffice suite - Low Saxon language support
+Summary(pl.UTF-8):	KOffice - wsparcie dla języka dolnosaksońskiego
+Group:		I18n
+
+%description Low_Saxon
+KOffice suite - Low Saxon language support.
+
+%description Low_Saxon -l pl.UTF-8
+KOffice - wsparcie dla języka dolnosaksońskiego.
+
 %package Norwegian_Bokmaal
 Summary:	KOffice suite - Norwegian (Bokmaal) language support
 Summary(pl.UTF-8):	KOffice - wsparcie dla języka norweskiego (odmiany bokmaal)
@@ -198,6 +246,17 @@ KOffice suite - Norwegian (Bokmaal) language support.
 
 %description Norwegian_Bokmaal -l pl.UTF-8
 KOffice - wsparcie dla języka norweskiego (odmiany bokmaal).
+
+%package Dutch
+Summary:	KOffice suite - Dutch language support
+Summary(pl.UTF-8):	KOffice - wsparcie dla języka holenderskiego
+Group:		I18n
+
+%description Dutch
+KOffice suite - Dutch language support.
+
+%description Dutch -l pl.UTF-8
+KOffice - wsparcie dla języka holenderskiego.
 
 %package Polish
 Summary:	KOffice suite - Polish language support
@@ -299,7 +358,7 @@ KOffice suite - Chinese language support.
 KOffice - wsparcie dla języka chińskiego.
 
 %prep
-%setup -q -c -T %(seq -f '-a %g' 0 25 | xargs)
+%setup -q -c -T %(seq -f '-a %g' 0 25 |sed -e 's/-a 10//;/^$/d' | xargs)
 
 %build
 for dir in koffice-l10n-*-%{version}; do
@@ -369,14 +428,19 @@ done
 FindLang ca > Catalan.lang
 FindLang da > Danish.lang
 FindLang de > German.lang
+FindLang el > Greek.lang
 FindLang en_GB > English_UK.lang
 FindLang es > Spanish.lang
 FindLang et > Estonian.lang
 FindLang fr > French.lang
+FindLang fy > Frisian.lang
 FindLang gl > Galician.lang
+FindLang kk > Kazakh.lang
 FindLang it > Italian.lang
 FindLang ja > Japanese.lang
 FindLang nb > Norwegian_Bokmaal.lang
+FindLang nds > Low_Saxon.lang
+FindLang nl > Dutch.lang
 FindLang pl > Polish.lang
 FindLang pt > Portuguese.lang
 FindLang pt_BR > Brazil_Portuguese.lang
@@ -398,9 +462,9 @@ check_installed_languages() {
 			err=1
 		fi
 	done
-	#if [ "$err" = 1 ]; then
-		#exit 1
-	#fi
+	if [ "$err" = 1 ]; then
+		exit 1
+	fi
 }
 check_installed_languages
 
@@ -409,7 +473,7 @@ check_installed_files() {
 	for a in *.lang; do
 		lang=${a%%.lang}
 
-		rpmfile=%{_rpmdir}/%{orgname}-$lang-%{version}-%{release}.%{_target_cpu}.rpm
+		rpmfile=%{_rpmdir}/%{name}-$lang-%{version}-%{release}.%{_target_cpu}.rpm
 		if [ ! -f $rpmfile ]; then
 			echo >&2 "Missing %%files section for $lang"
 			exit 1
@@ -428,6 +492,12 @@ check_installed_files
 %files -f German.lang German
 %defattr(644,root,root,755)
 
+%files -f Greek.lang Greek
+%defattr(644,root,root,755)
+
+%files -f Kazakh.lang Kazakh
+%defattr(644,root,root,755)
+
 %files -f English_UK.lang English_UK
 %defattr(644,root,root,755)
 
@@ -440,6 +510,9 @@ check_installed_files
 %files -f French.lang French
 %defattr(644,root,root,755)
 
+%files -f Frisian.lang Frisian
+%defattr(644,root,root,755)
+
 %files -f Galician.lang Galician
 %defattr(644,root,root,755)
 
@@ -450,6 +523,12 @@ check_installed_files
 %defattr(644,root,root,755)
 
 %files -f Norwegian_Bokmaal.lang Norwegian_Bokmaal
+%defattr(644,root,root,755)
+
+%files -f Low_Saxon.lang Low_Saxon
+%defattr(644,root,root,755)
+
+%files -f Dutch.lang Dutch
 %defattr(644,root,root,755)
 
 %files -f Polish.lang Polish
