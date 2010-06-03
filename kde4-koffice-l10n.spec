@@ -71,10 +71,15 @@ Source24:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{org
 # Source24-md5:	03cad914cbfed8aa3566e89f8b29b673
 Source25:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-zh_TW-%{version}.tar.bz2
 # Source25-md5:	ef53fbbce9785e39227e55b46ade6138
+BuildRequires:	automoc4
+BuildRequires:	cmake
+BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
+BuildRequires:	qt4-build
+BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildArch:	noarch
-BuildRoot:	%{tmpdir}/%{orgname}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 KOffice suite - international support.
@@ -127,9 +132,9 @@ KOffice suite - Greek language support.
 KOffice - wsparcie dla języka greckiego.
 
 %package Kazakh
-Summary:        KOffice suite - Kazakh language support
-Summary(pl.UTF-8):      KOffice - wsparcie dla języka kazachskiego
-Group:          I18n
+Summary:	KOffice suite - Kazakh language support
+Summary(pl.UTF-8):	KOffice - wsparcie dla języka kazachskiego
+Group:		I18n
 
 %description Kazakh
 KOffice suite - Kazakh language support.
