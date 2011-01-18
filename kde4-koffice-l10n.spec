@@ -10,74 +10,68 @@
 #
 
 %define		orgname		koffice-l10n
-%define		kdever		4.4.4
+%define		kdever		4.5.5
 
 Summary:	KOffice suite - international support
 Summary(pl.UTF-8):	KOffice - wsparcie dla wielu języków
 Name:		kde4-koffice-l10n
-Version:	2.2.0
+Version:	2.3.0
 Release:	1
 License:	GPL
 Group:		I18n
 Source0:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-ca-%{version}.tar.bz2
-# Source0-md5:	e0a44ee3d3caadcfa6b6a6db90a5fb8c
+# Source0-md5:	bdf2eb94055f51ebe4a59c58fb8fefc2
 Source1:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-da-%{version}.tar.bz2
-# Source1-md5:	8451e6a6f9944a8c4fe58fde9080b57f
+# Source1-md5:	ae6ae9ef63b0e52e0dc1813a87506890
 Source2:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-de-%{version}.tar.bz2
-# Source2-md5:	e8a011b256da64d8ef59e1ce454a5f16
+# Source2-md5:	3554bb5887af3af71166ce027637273e
 Source3:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-el-%{version}.tar.bz2
-# Source3-md5:	a33ac04422873eae59eba0b855d735ab
+# Source3-md5:	4d7dc252a659a9fe3da59590fcb05ac8
 Source4:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-en_GB-%{version}.tar.bz2
-# Source4-md5:	1f8146c4c7968bb78a3933dc56279403
+# Source4-md5:	d08426e1591675831a338e2bd54be10b
 Source5:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-es-%{version}.tar.bz2
-# Source5-md5:	2c116be60eb324e01bfdc7441f3d875c
+# Source5-md5:	f7ebe904ae522716dae85f117f5d08af
 Source6:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-et-%{version}.tar.bz2
-# Source6-md5:	31cc914b0c2284b973557babf5a97c15
+# Source6-md5:	8b32e4620dc3f314dd9ca57c22856e6c
 Source7:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-fr-%{version}.tar.bz2
-# Source7-md5:	a388a79d6574b7742dd69462aa36061e
-#Source8:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-fy-%{version}.tar.bz2
-## Source8-md5:	019883e5c3a9ad4269ecfd80b2db9ffb
-Source9:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-gl-%{version}.tar.bz2
-# Source9-md5:	e503c1be0f245848820a89315cddf7b1
-#Source10:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-hne-%{version}.tar.bz2
-## Source10-md5:	2342fb0f49f1580e360eb90b2c78079e
-Source11:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-it-%{version}.tar.bz2
-# Source11-md5:	732513f23d468a4c59dcecee4c10996e
-Source12:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-ja-%{version}.tar.bz2
-# Source12-md5:	d7ad30b646b3cf3c2e6ebfec496a452c
-Source13:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-kk-%{version}.tar.bz2
-# Source13-md5:	013845e0ccf0d37826aaac6c09452c42
-Source14:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nb-%{version}.tar.bz2
-# Source14-md5:	627cf1f003daeb421fd88d27b6c61c98
-Source15:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nds-%{version}.tar.bz2
-# Source15-md5:	8c79fc7cc59ade874f3f6f4d161a4e7d
-Source16:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nl-%{version}.tar.bz2
-# Source16-md5:	ca21886d6bcbc2adc00b2c276c4b12a0
-Source17:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pl-%{version}.tar.bz2
-# Source17-md5:	6068c8b3530a1827a5a61300ae009355
-Source18:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pt-%{version}.tar.bz2
-# Source18-md5:	d295f986978d7ffcc1a2a0cb06c0976f
-Source19:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pt_BR-%{version}.tar.bz2
-# Source19-md5:	52310c259beb0182e82b5ab736cf31a8
-Source20:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-sv-%{version}.tar.bz2
-# Source20-md5:	f4b0b67e80b7a818567d863af4d84acf
-Source21:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-tr-%{version}.tar.bz2
-# Source21-md5:	e4b34d47bb3cadcf993b10dcbfc88cb0
-Source22:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-uk-%{version}.tar.bz2
-# Source22-md5:	20f3d8ed3a911453f8ba644a34e1cc5f
-#Source23:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-wa-%{version}.tar.bz2
-## Source23-md5:	b572b46a959da595945d077aa7d89f42
-Source24:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-zh_CN-%{version}.tar.bz2
-# Source24-md5:	03cad914cbfed8aa3566e89f8b29b673
-Source25:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-zh_TW-%{version}.tar.bz2
-# Source25-md5:	ef53fbbce9785e39227e55b46ade6138
+# Source7-md5:	f1df28bed38e9cdb5366e18e16f094f0
+Source8:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-gl-%{version}.tar.bz2
+# Source8-md5:	7c5d43cf75eb2216bf124886d3f60d26
+Source9:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-it-%{version}.tar.bz2
+# Source9-md5:	4871c3c1fb2658f643f743daa6dfab81
+Source10:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-ja-%{version}.tar.bz2
+# Source10-md5:	21309edfc75a9be6500de31e40c36c36
+Source11:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-kk-%{version}.tar.bz2
+# Source11-md5:	0c170c2c0c91eb329d153a297d8dd6e2
+Source12:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nb-%{version}.tar.bz2
+# Source12-md5:	876e81adaf70b8627b2aa0963bc85f61
+Source13:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nds-%{version}.tar.bz2
+# Source13-md5:	5d5654f8744df637f9c5defb477191d4
+Source14:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-nl-%{version}.tar.bz2
+# Source14-md5:	631c3a748caa1bcf9eec72d96733e82f
+#Source15:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pl-%{version}.tar.bz2
+# Source15-md5:	6068c8b3530a1827a5a61300ae009355
+Source16:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pt-%{version}.tar.bz2
+# Source16-md5:	9ad09a3b7d07ec17071da57647cbd751
+Source17:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-pt_BR-%{version}.tar.bz2
+# Source17-md5:	0af6e5efaf7d8303ded3950e6c901d7d
+Source18:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-sv-%{version}.tar.bz2
+# Source18-md5:	86c409e03ef996ea533d5ab32bebda19
+Source19:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-tr-%{version}.tar.bz2
+# Source19-md5:	6ef89202523607122e4679dd6c748296
+Source20:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-uk-%{version}.tar.bz2
+# Source20-md5:	9e0b77d44a396a135366fc8a4938d6d6
+Source21:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-zh_CN-%{version}.tar.bz2
+# Source21-md5:	1ac692eea52fd74bc4f0761947b71770
+Source22:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{orgname}-zh_TW-%{version}.tar.bz2
+# Source22-md5:	47e58533f2ab1a4c4a674748087dd919
 BuildRequires:	automoc4
-BuildRequires:	cmake
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -363,19 +357,17 @@ KOffice suite - Chinese language support.
 KOffice - wsparcie dla języka chińskiego.
 
 %prep
-%setup -q -c -T %(seq -f '-a %g' 0 25 |sed -e 's/-a 8//;s/-a 10//;s/-a 23//;/^$/d' | xargs)
+%setup -q -c -T %(seq -f '-a %g' 0 22 |sed -e 's/-a 15//;/^$/d' | xargs)
 
 %build
 for dir in koffice-l10n-*-%{version}; do
 	cd $dir
+	install -d build
+	cd build
 	%cmake \
-		-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-		-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-		-DCMAKE_VERBOSE_MAKEFILE=OFF \
-		-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
-		.
+		../
 	%{__make}
-	cd ..
+	cd ../..
 done
 
 %install
