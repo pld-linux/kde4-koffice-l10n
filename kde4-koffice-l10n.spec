@@ -375,7 +375,7 @@ if [ ! -f installed.stamp -o ! -d $RPM_BUILD_ROOT ]; then
 	rm -rf $RPM_BUILD_ROOT
 
 	for dir in %{orgname}-*-%{version}; do
-		%{__make} -C $dir install \
+		%{__make} -C $dir/build install \
 			DESTDIR=$RPM_BUILD_ROOT
 	done
 	touch installed.stamp
@@ -430,7 +430,6 @@ FindLang en_GB > English_UK.lang
 FindLang es > Spanish.lang
 FindLang et > Estonian.lang
 FindLang fr > French.lang
-FindLang fy > Frisian.lang
 FindLang gl > Galician.lang
 FindLang kk > Kazakh.lang
 FindLang it > Italian.lang
@@ -438,13 +437,12 @@ FindLang ja > Japanese.lang
 FindLang nb > Norwegian_Bokmaal.lang
 FindLang nds > Low_Saxon.lang
 FindLang nl > Dutch.lang
-FindLang pl > Polish.lang
+#FindLang pl > Polish.lang
 FindLang pt > Portuguese.lang
 FindLang pt_BR > Brazil_Portuguese.lang
 FindLang sv > Swedish.lang
 FindLang tr > Turkish.lang
 FindLang uk > Ukrainian.lang
-FindLang wa > Walloon.lang
 FindLang zh_CN > Simplified_Chinese.lang
 FindLang zh_TW > Chinese.lang
 
@@ -507,9 +505,6 @@ check_installed_files
 %files -f French.lang French
 %defattr(644,root,root,755)
 
-%files -f Frisian.lang Frisian
-%defattr(644,root,root,755)
-
 %files -f Galician.lang Galician
 %defattr(644,root,root,755)
 
@@ -528,8 +523,8 @@ check_installed_files
 %files -f Dutch.lang Dutch
 %defattr(644,root,root,755)
 
-%files -f Polish.lang Polish
-%defattr(644,root,root,755)
+#%files -f Polish.lang Polish
+#%defattr(644,root,root,755)
 
 %files -f Portuguese.lang Portuguese
 %defattr(644,root,root,755)
@@ -544,9 +539,6 @@ check_installed_files
 %defattr(644,root,root,755)
 
 %files -f Ukrainian.lang Ukrainian
-%defattr(644,root,root,755)
-
-%files -f Walloon.lang Walloon
 %defattr(644,root,root,755)
 
 %files -f Simplified_Chinese.lang Simplified_Chinese
