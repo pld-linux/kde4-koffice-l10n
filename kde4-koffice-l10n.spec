@@ -67,8 +67,10 @@ Source22:	ftp://ftp.kde.org/pub/kde/stable/koffice-%{version}/koffice-l10n/%{org
 # Source22-md5:	47e58533f2ab1a4c4a674748087dd919
 BuildRequires:	automoc4
 BuildRequires:	cmake >= 2.8.0
+BuildRequires:	docbook-dtd42-xml
 BuildRequires:	gettext-devel
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
+BuildRequires:	libxml2-progs
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	rpmbuild(macros) >= 1.600
